@@ -31,9 +31,22 @@ h1 {
 
 main {
     margin-block: 3rem;
+    display: grid;
+    gap: 1rem;
 }
 
-.cards {
+@media (760px < width) {
+    main {
+        grid-template-columns: 1fr 350px;
+    }
+}
+
+.primary-content > .card {
+    background-color: orchid;
+}
+
+.cards,
+.primary-content {
     container-type: inline-size;
     background-color: rebeccapurple;
 }
@@ -46,7 +59,7 @@ main {
     margin-block: 1rem;
 }
 
-@container (width > 45ch) {
+@container (45ch < width) {
     .card {
         grid-template-columns: auto minmax(25ch, 1fr);
 

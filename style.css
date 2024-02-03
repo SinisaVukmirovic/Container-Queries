@@ -43,6 +43,10 @@ main {
 
 .primary-content > .card {
     background-color: orchid;
+    
+    & h2 {
+        font-weight: bold;
+    }
 }
 
 .cards,
@@ -51,12 +55,23 @@ main {
     background-color: rebeccapurple;
 }
 
+/* container names */
+/* .cards {
+    container-name: cards;
+} */
+
 .card {
     background-color: #eee;
     color: #333;
     display: grid;
     padding: 1rem;
     margin-block: 1rem;
+}
+
+.card h2 {
+    /* container query units */
+    /* font-size: 6cqi; */
+    font-size: clamp(1.5rem, 6cqi, 3rem);
 }
 
 @container (45ch < width) {
@@ -68,6 +83,13 @@ main {
         }
     }
 }
+
+/* container names */
+/* @container cards (45ch < width) {
+    .card {
+        background-color: lightsalmon;
+    }
+} */
 
 .card {
     display: grid;

@@ -11,7 +11,11 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: rebeccapurple;
-    padding: 2rem;
+    padding: 1rem;
+}
+
+p {
+    margin-block: 1rem;
 }
 
 img {
@@ -24,11 +28,12 @@ img {
 }
 
 h1 {
-    --title-font-size: 1.25rem;
+    --title-font-size: 1rem;
     font-size: clamp(var(--title-font-size), 
-                2vw + calc(var(--title-font-size) - .75rem), 
-                calc(var(--title-font-size) + 2rem));
+                2vw + var(--title-font-size), 
+                var(--title-font-size) + 5rem);
     font-weight: bold;
+    text-align: center;
 }
 
 main {
@@ -38,6 +43,14 @@ main {
 }
 
 @media (760px < width) {
+    html {
+        font-size: 20px;
+    }
+
+    body {
+        padding: 2rem;
+    }
+
     main {
         grid-template-columns: 1fr 350px;
     }
@@ -73,12 +86,12 @@ main {
 .card h2 {
     /* container query units */
     /* font-size: 6cqi; */
-    font-size: clamp(1.5rem, 6cqi, 3rem);
+    font-size: clamp(1.25rem, 6cqi, 2.5rem);
 }
 
 @container (60ch < width) {
     .card {
-        grid-template-columns: auto minmax(30ch, 1fr);
+        grid-template-columns: auto minmax(35ch, 1fr);
 
         & h2 {
             grid-column: 1 / -1;

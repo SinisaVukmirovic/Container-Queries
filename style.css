@@ -16,6 +16,7 @@ body {
 
 p {
     margin-block: 1rem;
+    line-height: 1.5;
 }
 
 img {
@@ -25,6 +26,10 @@ img {
     /* max-width: 30rem; */
     object-fit: cover;
     object-position: center;
+}
+
+strong {
+    font-weight: bolder;
 }
 
 h1 {
@@ -42,13 +47,13 @@ main {
     gap: 1rem;
 }
 
-@media (760px < width) {
+@media (900px < width) {
     html {
         font-size: 20px;
     }
 
     body {
-        padding: 2rem;
+        padding: 1rem 10%;
     }
 
     main {
@@ -91,7 +96,7 @@ main {
 
 @container (60ch < width) {
     .card {
-        grid-template-columns: auto minmax(35ch, 1fr);
+        grid-template-columns: auto minmax(30ch, 1fr);
 
         & h2 {
             grid-column: 1 / -1;
@@ -111,3 +116,11 @@ main {
     gap: 1rem;
 }
 
+footer {
+    text-align: center;
+
+    & a {
+        text-decoration: none;
+        color: yellow;
+    }
+}
